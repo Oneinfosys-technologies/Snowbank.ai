@@ -28,7 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark"> {/* Apply dark theme by default */}
+    <html lang="en" className="dark">
+      {/* Apply dark theme by default - Moved comment outside the html tag */}
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
         inter.variable, // Use Inter variable
