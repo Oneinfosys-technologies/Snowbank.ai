@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -37,7 +38,7 @@ export function HeroSection() {
       y: 0,
       opacity: 1,
       filter: 'blur(0px)',
-      transition: { duration: 0.6, ease: [0.6, 0.01, -0.05, 0.95] },
+      transition: { duration: 0.6, ease: "easeOut" }, // Changed easing to "easeOut"
     },
   };
 
