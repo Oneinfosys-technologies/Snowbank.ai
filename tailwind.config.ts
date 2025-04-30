@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
     darkMode: ["class"],
@@ -9,6 +10,10 @@ export default {
   ],
   theme: {
   	extend: {
+        fontFamily: {
+            sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+            orbitron: ["var(--font-orbitron)", "var(--font-geist-sans)", ...fontFamily.sans], // Add Orbitron
+        },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -50,16 +55,7 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-  			sidebar: {
-  				DEFAULT: 'hsl(var(--sidebar-background))',
-  				foreground: 'hsl(var(--sidebar-foreground))',
-  				primary: 'hsl(var(--sidebar-primary))',
-  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-  				accent: 'hsl(var(--sidebar-accent))',
-  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-  				border: 'hsl(var(--sidebar-border))',
-  				ring: 'hsl(var(--sidebar-ring))'
-  			}
+            // Gradients defined in globals.css variables are preferred
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -82,11 +78,21 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+             'gradient-flow': { // Defined in globals.css utility, keep keyframe name consistent
+               '0%': { backgroundPosition: '0% 50%' },
+               '100%': { backgroundPosition: '300% 50%' },
+             },
+             'snowfall': { // Defined in footer, keep name consistent
+                '0%': { backgroundPosition: '0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%' },
+                '100%': { backgroundPosition: '0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%' },
+             }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+            'gradient-flow': 'gradient-flow 4s linear infinite', // Defined in globals.css utility
+            'snowfall': 'snowfall 20s linear infinite', // Defined in footer
   		}
   	}
   },

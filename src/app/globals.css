@@ -2,79 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 224 71% 4%; /* Deep dark blue/black */
+    --foreground: 210 40% 98%; /* Almost white */
+
+    --card: 224 71% 9%; /* Slightly lighter dark blue */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%; /* White for primary text/elements */
+    --primary-foreground: 224 71% 10%; /* Dark for text on primary bg */
+
+    --secondary: 215 40% 15%; /* Muted dark blue */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 40% 15%;
+    --muted-foreground: 210 40% 60%; /* Lighter gray for muted text */
+
+    --accent: 190 100% 60%; /* Electric Blue/Cyan */
+    --accent-foreground: 224 71% 4%; /* Dark text on accent */
+
+    --destructive: 0 72% 51%; /* Red */
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 30% 30%; /* Subtle border color */
+    --input: 215 30% 30%;
+    --ring: 190 100% 60%; /* Accent color for rings */
+
+    --radius: 0.75rem; /* Slightly larger radius for futuristic feel */
+
+    --chart-1: 190 100% 60%; /* Electric Blue */
+    --chart-2: 270 80% 70%; /* Purple */
+    --chart-3: 210 80% 70%; /* Lighter Blue */
+    --chart-4: 300 80% 70%; /* Magenta */
+    --chart-5: 180 60% 50%; /* Teal */
+
+    /* Custom vars for Snowbank */
+    --gradient-start: 190 100% 60%; /* Electric Blue */
+    --gradient-mid: 240 80% 70%; /* Brighter Purple */
+    --gradient-end: 270 90% 75%; /* Vibrant Purple/Violet */
+
+    --neon-glow: 190 100% 60%; /* Accent for neon effect */
   }
+
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+     /* Dark theme is default, so these are the same */
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 71% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 224 71% 10%;
+
+    --secondary: 215 40% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 40% 15%;
+    --muted-foreground: 210 40% 60%;
+
+    --accent: 190 100% 60%;
+    --accent-foreground: 224 71% 4%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 30% 30%;
+    --input: 215 30% 30%;
+    --ring: 190 100% 60%;
+
+    --chart-1: 190 100% 60%;
+    --chart-2: 270 80% 70%;
+    --chart-3: 210 80% 70%;
+    --chart-4: 300 80% 70%;
+    --chart-5: 180 60% 50%;
+
+    --gradient-start: 190 100% 60%;
+    --gradient-mid: 240 80% 70%;
+    --gradient-end: 270 90% 75%;
+
+    --neon-glow: 190 100% 60%;
   }
 }
 
@@ -84,5 +98,48 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-geist-sans); /* Updated font */
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', var(--font-geist-sans), sans-serif; /* Use Orbitron */
+    letter-spacing: 0.05em;
   }
 }
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-card/30 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg;
+  }
+  .neon-glow {
+    box-shadow: 0 0 5px hsl(var(--neon-glow)),
+                0 0 10px hsl(var(--neon-glow)),
+                0 0 15px hsl(var(--neon-glow));
+  }
+  .animated-gradient-outline {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box; /* Important for border gradient */
+    z-index: 1;
+  }
+  .animated-gradient-outline::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(90deg, hsl(var(--gradient-start)), hsl(var(--gradient-mid)), hsl(var(--gradient-end)), hsl(var(--gradient-mid)), hsl(var(--gradient-start)));
+    background-size: 300% 100%;
+    border-radius: inherit; /* Match button's border radius */
+    animation: gradient-flow 4s linear infinite;
+    z-index: -1;
+  }
+
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+  }
+}
+
+/* Import Orbitron font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
