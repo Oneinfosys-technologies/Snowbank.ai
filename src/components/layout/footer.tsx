@@ -1,3 +1,5 @@
+"use client"; // Add 'use client' directive
+
 import Link from 'next/link';
 import { Github, Twitter, Disc } from 'lucide-react'; // Using Disc for Discord
 

@@ -11,8 +11,8 @@ export default {
   theme: {
   	extend: {
         fontFamily: {
-            sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-            orbitron: ["var(--font-orbitron)", "var(--font-geist-sans)", ...fontFamily.sans], // Add Orbitron
+            sans: ["var(--font-inter)", ...fontFamily.sans], // Use Inter variable
+            orbitron: ["var(--font-orbitron)", "var(--font-inter)", ...fontFamily.sans], // Add Orbitron with Inter fallback
         },
   		colors: {
   			background: 'hsl(var(--background))',
