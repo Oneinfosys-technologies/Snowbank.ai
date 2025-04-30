@@ -1,11 +1,12 @@
+
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { BarChart, LineChart, TrendingUp, Users, Lock } from 'lucide-react';
+import { BarChart, LineChart as LineChartIcon, TrendingUp, Users, Lock } from 'lucide-react'; // Renamed LineChart import to avoid conflict
 import { ChartContainer, ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent } from "@/components/ui/chart"
-import { Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart } from 'recharts'; // Import LineChart from recharts
 
 const chartData = [
   { month: "Jan", lending: 4.2, borrowing: 6.1 },
@@ -110,16 +111,16 @@ export function ProtocolOverview() {
           <Card className="glassmorphism">
             <CardHeader>
               <CardTitle className="font-orbitron flex items-center gap-2">
-                 <LineChart className="text-accent" /> Historical APY Trends
+                 <LineChartIcon className="text-accent" /> Historical APY Trends {/* Use renamed icon */}
               </CardTitle>
             </CardHeader>
             <CardContent>
                <ChartContainer config={chartConfig} className="h-[300px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
-                    <LineChart
+                    <LineChart // Use LineChart component from recharts
                       data={chartData}
                       margin={{ top: 5, right: 20, left: 0, bottom: 5 }}
-                      accessibilityLayer
+                      // Removed accessibilityLayer prop
                     >
                       <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border)/0.5)" />
                       <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" />
