@@ -1,7 +1,8 @@
-"use client"; // Add 'use client' directive
+
+"use client";
 
 import Link from 'next/link';
-import { Github, Twitter, Disc } from 'lucide-react'; // Using Disc for Discord
+import { Github, Twitter, Disc, Mail } from 'lucide-react'; // Using Disc for Discord, Added Mail
 
 export function Footer() {
   return (
@@ -22,43 +23,57 @@ export function Footer() {
         }}
       />
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8"> {/* Changed to 4 columns */}
           {/* Column 1: Brand & Copyright */}
           <div>
             <h3 className="text-lg font-orbitron font-bold text-primary mb-2">Snowbank</h3>
             <p className="text-xs text-muted-foreground">
               &copy; {new Date().getFullYear()} Snowbank Protocol. All rights reserved.
               <br />
-              Decentralized Finance, Reimagined.
+              Experience finance, reimagined.
             </p>
             <div className="mt-4 flex space-x-4">
-                <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Github size={18} /></a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Twitter size={18} /></a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Disc size={18} /></a> {/* Discord Placeholder */}
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Snowbank Github" className="text-muted-foreground hover:text-primary transition-colors"><Github size={18} /></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Snowbank Twitter" className="text-muted-foreground hover:text-primary transition-colors"><Twitter size={18} /></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Snowbank Discord" className="text-muted-foreground hover:text-primary transition-colors"><Disc size={18} /></a>
+                <a href="mailto:contact@snowbank.ai" aria-label="Contact Snowbank Email" className="text-muted-foreground hover:text-primary transition-colors"><Mail size={18} /></a>
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Products (Placeholder - adjust links) */}
           <div>
-            <h4 className="text-sm font-orbitron font-semibold text-primary mb-2 tracking-wider">LINKS</h4>
+            <h4 className="text-sm font-orbitron font-semibold text-primary mb-2 tracking-wider">PRODUCTS</h4>
             <ul className="space-y-1 text-xs">
-              <li><Link href="#protocol" className="text-muted-foreground hover:text-primary transition-colors">Protocol</Link></li>
-              <li><Link href="#token" className="text-muted-foreground hover:text-primary transition-colors">Token</Link></li>
-              <li><Link href="#security" className="text-muted-foreground hover:text-primary transition-colors">Security Audits</Link></li>
-              <li><Link href="/docs" className="text-muted-foreground hover:text-primary transition-colors">Documentation</Link></li>
+              <li><Link href="#products" className="text-muted-foreground hover:text-primary transition-colors">Supply</Link></li>
+              <li><Link href="#products" className="text-muted-foreground hover:text-primary transition-colors">Borrow</Link></li>
+              <li><Link href="#products" className="text-muted-foreground hover:text-primary transition-colors">Swap</Link></li>
+              <li><Link href="#products" className="text-muted-foreground hover:text-primary transition-colors">Stake</Link></li>
+              <li><Link href="#frost" className="text-muted-foreground hover:text-primary transition-colors">FROST Stablecoin</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Legal/Info */}
+          {/* Column 3: Resources */}
           <div>
-            <h4 className="text-sm font-orbitron font-semibold text-primary mb-2 tracking-wider">INFO</h4>
+            <h4 className="text-sm font-orbitron font-semibold text-primary mb-2 tracking-wider">RESOURCES</h4>
              <ul className="space-y-1 text-xs">
-              <li><Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors">Terms of Service</Link></li>
-              <li><Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
-               <li><Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
-               <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact Us</Link></li>
+              <li><Link href="/brand-assets" className="text-muted-foreground hover:text-primary transition-colors">Brand Assets & Guidelines</Link></li>
+              <li><Link href="/support" className="text-muted-foreground hover:text-primary transition-colors">Help & Support Docs</Link></li>
+              <li><Link href="/docs" className="text-muted-foreground hover:text-primary transition-colors">Developer Documentation</Link></li>
+              <li><Link href="/governance" className="text-muted-foreground hover:text-primary transition-colors">Governance Proposals</Link></li>
+              <li><Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors">FAQs</Link></li>
             </ul>
           </div>
+
+          {/* Column 4: Legal */}
+          <div>
+            <h4 className="text-sm font-orbitron font-semibold text-primary mb-2 tracking-wider">LEGAL</h4>
+             <ul className="space-y-1 text-xs">
+              <li><Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors">Terms of Use</Link></li>
+              <li><Link href="/support" className="text-muted-foreground hover:text-primary transition-colors">Contact Support</Link></li> {/* Link to support page */}
+            </ul>
+          </div>
+
         </div>
 
         {/* Command-line style bottom border */}

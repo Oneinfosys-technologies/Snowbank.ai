@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -32,22 +33,25 @@ export function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
-          <Link href="#protocol" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-            Protocol
+          <Link href="#products" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            Products
           </Link>
-          <Link href="#token" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-            Token
+          <Link href="#frost" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            FROST
           </Link>
            <Link href="#security" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
             Security
           </Link>
-          <Link href="#ecosystem" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-            Ecosystem
+          <Link href="#developers" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            Developers
+          </Link>
+           <Link href="#community" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            Community
           </Link>
         </nav>
 
         <Button variant="outline" className="animated-gradient-outline text-sm">
-          Connect Wallet
+          Open App
         </Button>
       </div>
     </motion.header>

@@ -2,24 +2,13 @@
 "use client";
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, TrendingUp } from 'lucide-react';
+import { ArrowRight, TrendingUp, Quote, Rocket } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export function HeroSection() {
-  // Placeholder for real-time APY data
-  const [apy, setApy] = useState({ lend: 4.5, borrow: 6.2 });
-
-  // Simulate APY changes
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setApy({
-        lend: +(4 + Math.random()).toFixed(2),
-        borrow: +(6 + Math.random()).toFixed(2),
-      });
-    }, 5000); // Update every 5 seconds
-    return () => clearInterval(interval);
-  }, []);
+  // Placeholder for stats/data
+  const totalAssetsManaged = "$2.3 Billion"; // Example data from user text
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -38,7 +27,7 @@ export function HeroSection() {
       y: 0,
       opacity: 1,
       filter: 'blur(0px)',
-      transition: { duration: 0.6, ease: "easeOut" }, // Changed easing to "easeOut"
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -55,28 +44,34 @@ export function HeroSection() {
           variants={itemVariants}
           className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-200 to-purple-300"
         >
-          Where Digital Assets Grow Smarter
+          A next-gen decentralized liquidity protocol.
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
           className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto"
         >
-          Experience the future of decentralized finance. Secure, transparent, and intelligent savings & lending on the blockchain.
+          Supply, borrow, swap, stake, and explore DeFi like never before — all in one intuitive, secure, and transparent platform.
         </motion.p>
 
-        {/* Real-time APY Display */}
+        <motion.blockquote
+          variants={itemVariants}
+          className="text-xl italic text-accent mb-12 border-l-4 border-accent pl-4 mx-auto max-w-lg text-left"
+        >
+          <Quote className="inline-block h-5 w-5 mr-2 opacity-50 transform -scale-x-100" />
+           Experience finance, reimagined — powered by Web3.
+          <Quote className="inline-block h-5 w-5 ml-2 opacity-50" />
+        </motion.blockquote>
+
+
+        {/* Asset Managed Display */}
          <motion.div
            variants={itemVariants}
            className="mb-12 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8"
          >
-           <div className="flex items-center gap-2 text-lg glassmorphism p-3 px-5">
-              <TrendingUp className="text-green-400" size={20} />
-              <span>Lend APY: <span className="font-bold text-green-400">{apy.lend}%</span></span>
-           </div>
-           <div className="flex items-center gap-2 text-lg glassmorphism p-3 px-5">
-             <TrendingUp className="text-red-400 transform rotate-90" size={20} />
-             <span>Borrow APY: <span className="font-bold text-red-400">{apy.borrow}%</span></span>
+           <div className="flex items-center gap-3 text-lg glassmorphism p-3 px-6 rounded-lg">
+              <TrendingUp className="text-primary" size={24} />
+              <span className="text-primary">Over <span className="font-bold">{totalAssetsManaged}</span> in assets managed across Snowbank’s growing multi-chain ecosystem.</span>
            </div>
          </motion.div>
 
@@ -91,8 +86,8 @@ export function HeroSection() {
             asChild
           >
             <motion.a href="#get-started" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              Get Started
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              Open App
+              <Rocket className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </motion.a>
           </Button>
           <Button
@@ -101,8 +96,8 @@ export function HeroSection() {
             className="animated-gradient-outline group text-base font-semibold backdrop-blur-sm bg-transparent hover:bg-white/10 transition-all duration-300"
              asChild
           >
-             <motion.a href="#protocol" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              Learn More
+             <motion.a href="#products" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              Explore Products
              </motion.a>
           </Button>
         </motion.div>
@@ -110,3 +105,4 @@ export function HeroSection() {
     </section>
   );
 }
+
