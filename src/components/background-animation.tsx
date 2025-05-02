@@ -23,7 +23,7 @@ export function BackgroundAnimation() {
     camera.position.z = 5;
 
     // Particle system (Basic Example - Replace with sophisticated shader logic)
-    const particleCount = 5000;
+    const particleCount = 2000; // Reduced from 5000
     const particles = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
