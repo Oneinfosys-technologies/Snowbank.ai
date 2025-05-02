@@ -23,7 +23,7 @@ export function BackgroundAnimation() {
     camera.position.z = 5;
 
     // Particle system (Basic Example - Replace with sophisticated shader logic)
-    const particleCount = 2000; // Reduced from 5000
+    const particleCount = 500; // Reduced particle count for lower density
     const particles = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
@@ -69,7 +69,7 @@ export function BackgroundAnimation() {
 
     // Material
     const particleMaterial = new THREE.PointsMaterial({
-      size: 0.02,
+      size: 0.02, // Kept size same, reduced count for lower density
       vertexColors: true, // Use colors defined in geometry
       blending: THREE.AdditiveBlending, // Nice glow effect
       transparent: true,
