@@ -114,6 +114,40 @@
   }
 }
 
+@layer components {
+  /* Preloader Styles */
+  .preloader-container {
+    @apply fixed inset-0 z-[100] flex items-center justify-center bg-background;
+  }
+  .loader {
+    position: relative;
+    width: 300px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, hsl(var(--foreground)), transparent); /* Changed green to white */
+    overflow: hidden;
+  }
+
+  .loader::after {
+    content: '';
+    position: absolute;
+    translate: -200px 0;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, hsl(var(--background)), transparent); /* Changed dark color to background */
+    animation: slide 1.5s infinite linear; /* Adjusted timing */
+  }
+
+  @keyframes slide {
+    0% {
+      translate: -150px 0;
+    }
+    100% {
+      translate: 300px 0;
+    }
+  }
+}
+
+
 @layer utilities {
   .glassmorphism {
     @apply bg-card/30 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg;
