@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Snowflake } from 'lucide-react'; // Using Snowflake as placeholder
+import Image from 'next/image'; // Import Image component
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -21,11 +21,15 @@ export function Header() {
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          {/* Placeholder Logo - Snowflake x Vault */}
+          {/* New Logo */}
           <div className="relative w-8 h-8">
-             <Snowflake className="absolute inset-0 w-8 h-8 text-primary transition-transform duration-300 group-hover:rotate-90 group-hover:scale-110" />
-             {/* Simple overlay to suggest vault */}
-             <div className="absolute inset-1 border border-primary/50 rounded-full group-hover:opacity-0 transition-opacity"></div>
+             <Image 
+               src="/path-to-your-logo.png" 
+               alt="Snowbank Logo" 
+               width={32} 
+               height={32} 
+               className="transition-transform duration-300 group-hover:scale-110"
+             />
           </div>
           <span className="text-xl font-bold font-orbitron text-primary">
             Snowbank
