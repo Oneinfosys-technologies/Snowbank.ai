@@ -24,7 +24,7 @@ export function Header() {
           {/* New Logo */}
           <div className="relative w-8 h-8">
              <Image 
-               src="/path-to-your-logo.png" 
+               src="/src/app/logo.png" 
                alt="Snowbank Logo" 
                width={32} 
                height={32} 
