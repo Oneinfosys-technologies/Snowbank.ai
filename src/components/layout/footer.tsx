@@ -27,7 +27,7 @@ export function Footer() {
           {/* Column 1: Brand & Copyright */}
           <div>
             {/* Responsive Logo */}
-            <div className="relative w-40 h-10 sm:w-56 sm:h-14 md:w-72 md:h-20 mb-2">
+            <div className="relative w-20 h-5 sm:w-28 sm:h-7 md:w-36 md:h-10 mb-2">
               <Image 
                 src="/logo.png" 
                 alt="Snowbank Logo" 
@@ -37,7 +37,7 @@ export function Footer() {
                 priority={false}
               />
             </div>
-            <h3 className="text-lg font-orbitron font-bold text-primary mb-2">Snowbank</h3>
+            <h3 className="text-lg font-orbitron font-bold text-primary mb-2"></h3>
             <p className="text-xs text-muted-foreground">
               &copy; {new Date().getFullYear()} Snowbank Protocol. All rights reserved.
               <br />
