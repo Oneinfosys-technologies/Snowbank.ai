@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from 'next/link';
@@ -21,19 +20,16 @@ export function Header() {
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          {/* New Logo */}
-          <div className="relative w-8 h-8">
-             <Image 
-               src="/src/app/logo.png" 
-               alt="Snowbank Logo" 
-               width={32} 
-               height={32} 
-               className="transition-transform duration-300 group-hover:scale-110"
-             />
+          {/* Responsive Logo */}
+          <div className="relative w-40 h-10 sm:w-56 sm:h-14 md:w-72 md:h-20 transition-all duration-300">
+            <Image 
+              src="/src/app/logo.png" 
+              alt="Snowbank Logo" 
+              fill
+              className="object-contain transition-transform duration-300 group-hover:scale-105"
+              priority
+            />
           </div>
-          <span className="text-xl font-bold font-orbitron text-primary">
-            Snowbank
-          </span>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">

@@ -1,8 +1,8 @@
-
 "use client";
 
 import Link from 'next/link';
 import { Github, Twitter, Disc, Mail } from 'lucide-react'; // Using Disc for Discord, Added Mail
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -26,6 +26,17 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8"> {/* Changed to 4 columns */}
           {/* Column 1: Brand & Copyright */}
           <div>
+            {/* Responsive Logo */}
+            <div className="relative w-40 h-10 sm:w-56 sm:h-14 md:w-72 md:h-20 mb-2">
+              <Image 
+                src="/src/app/logo.png" 
+                alt="Snowbank Logo" 
+                fill
+                className="object-contain"
+                loading="lazy"
+                priority={false}
+              />
+            </div>
             <h3 className="text-lg font-orbitron font-bold text-primary mb-2">Snowbank</h3>
             <p className="text-xs text-muted-foreground">
               &copy; {new Date().getFullYear()} Snowbank Protocol. All rights reserved.
