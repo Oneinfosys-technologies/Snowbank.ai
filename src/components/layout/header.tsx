@@ -21,7 +21,7 @@ export function Header() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           {/* Responsive Logo */}
-          <div className="relative w-40 h-10 sm:w-56 sm:h-14 md:w-72 md:h-20 transition-all duration-300">
+          <div className="relative w-20 h-5 sm:w-28 sm:h-7 md:w-36 md:h-10 transition-all duration-300">
             <Image 
               src="/logo.png" 
               alt="Snowbank Logo" 
