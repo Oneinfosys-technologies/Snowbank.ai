@@ -61,8 +61,8 @@ export default function RootLayout({
          {/* Basic meta tags can be placed here if needed */}
          <meta name="description" content="Snowbank: A futuristic, decentralized finance (DeFi) protocol for next-gen crypto savings and lending. Where Digital Assets Grow Smarter." />
          {/* Favicon links */}
-         <link rel="icon" href="/logo.png" sizes="any" type="image/png" />
-         <link rel="apple-touch-icon" href="/logo.png" />
+         <link rel="icon" href="/favicon.png" sizes="any" type="image/png" />
+         <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
