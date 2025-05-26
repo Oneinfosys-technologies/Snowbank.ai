@@ -23,7 +23,7 @@ export function Header() {
           {/* Responsive Logo */}
           <div className="relative w-40 h-10 sm:w-56 sm:h-14 md:w-72 md:h-20 transition-all duration-300">
             <Image 
-              src="/src/app/logo.png" 
+              src="/logo.png" 
               alt="Snowbank Logo" 
               fill
               className="object-contain transition-transform duration-300 group-hover:scale-105"
